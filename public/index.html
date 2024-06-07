@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat App</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Chat</h1>
+  <form id="loginForm">
+    <label for="username">Nome:</label>
+    <input type="text" id="username" required>
+    <label for="room">Escolha uma sala:</label>
+    <select id="room" required>
+      <option value="Python">Python</option>
+      <option value="Java">Java</option>
+      <option value="Node">Node</option>
+    </select>
+    <button type="submit">Entrar</button>
+  </form>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const room = document.getElementById('room').value;
+      console.log(`Enviando nome de usuário: ${username}, Sala: ${room}`);
+      window.location.href = `/chat?username=${username}&room=${room}`;
+    });
+  </script>
+</body>
+</html>
